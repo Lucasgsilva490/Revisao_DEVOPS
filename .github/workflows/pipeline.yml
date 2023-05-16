@@ -33,3 +33,13 @@ jobs:
       run: |
           cd src
           java -cp . Teste
+    # Subir no dockerhub
+    - uses: mr-smithers-excellent/docker-build-push@v6
+      name: Subindo no dockerhub
+      with:
+          image: lucasgsilva490/aula_revisao
+          tags: latest
+          registry: docker.io
+          dockerfile: dockerfile
+          username: ${{secrets.DOCKERHUB_USER}}
+          password: ${{ secrets.DOCKERHUB_PASSWORD}}
