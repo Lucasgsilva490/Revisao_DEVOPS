@@ -35,7 +35,7 @@ jobs:
           java -cp . Teste
     #Versionamento por git Runner
     - name: Versão do Projeto
-      run: echo ${{}github.run_number}
+      run: echo ${{github.run_number}}
     # Subir no dockerhub
     - uses: mr-smithers-excellent/docker-build-push@v6
       name: Subindo no dockerhub
